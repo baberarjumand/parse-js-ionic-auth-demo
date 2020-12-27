@@ -1,7 +1,4 @@
 .logo-container {
-  //   display: flex;
-  //   justify-content: center;
-
   text-align: center;
 
   .center-icon {
@@ -9,12 +6,12 @@
   }
 
   .end-icon {
-    // margin-left: auto;
     float: right;
   }
 }
 
-.email-input-container {
+.email-input-container,
+.password-input-container {
   text-align: center;
   display: flex;
 

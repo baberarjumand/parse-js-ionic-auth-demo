@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Blank </ion-title>
+    <ion-title> Home </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,5 +14,9 @@
   <div id="container">
     <strong>This is a protected route.</strong>
     <p>Only authenticated users should be able to view this route.</p>
+    <p *ngIf="this.currentUser" class="ion-margin ion-padding">
+      Current User: {{ this.currentUser.getUsername() }}
+    </p>
+    <ion-button color="danger" (click)="this.logOut()">Log Out</ion-button>
   </div>
 </ion-content>

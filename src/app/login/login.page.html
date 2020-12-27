@@ -21,32 +21,68 @@
       </ion-col>
     </ion-row>
     <!-- END OF top logos row -->
-    <!-- email field row -->
-    <ion-row class="ion-padding">
-      <ion-col size="10" offset="1" size-lg="4" offset-lg="4">
-        <div class="email-input-container">
-          <ion-icon name="person-outline" class="email-icon"></ion-icon>
-          <ion-input placeholder="Username"></ion-input>
-        </div>
-      </ion-col>
-      <ion-col size="1" class="spinner-col" *ngIf="this.showLoadingSpinner">
-        <ion-spinner name="lines"></ion-spinner>
-      </ion-col>
-    </ion-row>
-    <!-- END OF email field row -->
-    <!-- login button row -->
-    <ion-row>
-      <ion-col
-        size="10"
-        offset="1"
-        size-lg="4"
-        offset-lg="4"
-        class="login-button-col"
-      >
-        <ion-button color="primary">Log In</ion-button>
-      </ion-col>
-    </ion-row>
-    <!-- END OF login button row -->
+    <form
+      [formGroup]="this.loginFormGroup"
+      (ngSubmit)="this.onLoginFormSubmit()"
+    >
+      <!-- email field row -->
+      <ion-row class="ion-padding">
+        <ion-col size="10" offset="1" size-lg="4" offset-lg="4">
+          <div class="email-input-container">
+            <ion-icon name="person-outline" class="email-icon"></ion-icon>
+            <ion-input
+              placeholder="Username"
+              formControlName="username"
+            ></ion-input>
+          </div>
+        </ion-col>
+        <ion-col size="1" class="spinner-col" *ngIf="this.showLoadingSpinner">
+          <ion-spinner name="lines"></ion-spinner>
+        </ion-col>
+        <!-- user not found msg col -->
+        <ion-col
+          size="10"
+          offset="1"
+          size-lg="4"
+          offset-lg="4"
+          *ngIf="this.showUserNotFoundMsg"
+        >
+          <div style="text-align: center">
+            <ion-text color="danger">Username not found</ion-text>
+          </div>
+        </ion-col>
+        <!-- END OF user not found msg col -->
+      </ion-row>
+      <!-- END OF email field row -->
+      <!-- password field row -->
+      <ion-row class="ion-padding" *ngIf="this.showPasswordField">
+        <ion-col size="10" offset="1" size-lg="4" offset-lg="4">
+          <div class="password-input-container">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-input
+              placeholder="Password"
+              type="password"
+              formControlName="password"
+            ></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- END OF password field row -->
+      <!-- login button row -->
+      <ion-row>
+        <ion-col
+          size="10"
+          offset="1"
+          size-lg="4"
+          offset-lg="4"
+          class="login-button-col"
+        >
+          <ion-button color="primary" type="submit">Log In</ion-button>
+        </ion-col>
+      </ion-row>
+      <!-- END OF login button row -->
+    </form>
+
     <!-- horizontal separator row -->
     <ion-row>
       <ion-col size="12" size-lg="6" offset-lg="3">
@@ -65,7 +101,9 @@
         style="text-align: center"
       >
         <h3 class="ion-margin ion-padding">New User?</h3>
-        <ion-button color="medium">Sign Up</ion-button>
+        <ion-button color="medium" [routerLink]="['/sign-up']"
+          >Sign Up</ion-button
+        >
       </ion-col>
     </ion-row>
     <!-- END OF new user row -->

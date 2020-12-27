@@ -1,9 +1,94 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
-    <ion-title>sign-up</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+  <ion-grid class="ion-padding">
+    <!-- top logos row -->
+    <ion-row class="ion-padding">
+      <ion-col size="10" offset="1" size-lg="4" offset-lg="4">
+        <div class="logo-container">
+          <ion-icon name="logo-ionic" class="center-icon"></ion-icon>
+          <ion-icon
+            name="logo-angular"
+            class="end-icon"
+            size="large"
+          ></ion-icon>
+          <h3 class="ion-margin ion-padding">Sign Up</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- END OF top logos row -->
+    <form
+      [formGroup]="this.signUpFormGroup"
+      (ngSubmit)="this.onSignUpFormSubmit()"
+    >
+      <!-- email field row -->
+      <ion-row class="ion-padding">
+        <ion-col size="10" offset="1" size-lg="4" offset-lg="4">
+          <div class="email-input-container">
+            <ion-icon name="person-outline" class="email-icon"></ion-icon>
+            <ion-input
+              placeholder="Username"
+              formControlName="newUsername"
+              type="text"
+            ></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- END OF email field row -->
+      <!-- password field row -->
+      <ion-row class="ion-padding">
+        <ion-col size="10" offset="1" size-lg="4" offset-lg="4">
+          <div class="password-input-container">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <ion-input
+              placeholder="Password"
+              formControlName="newPassword"
+              type="password"
+            ></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- END OF password field row -->
+      <!-- sign up button row -->
+      <ion-row>
+        <ion-col
+          size="10"
+          offset="1"
+          size-lg="4"
+          offset-lg="4"
+          class="login-button-col"
+        >
+          <ion-button color="primary" type="submit">Sign Up</ion-button>
+        </ion-col>
+      </ion-row>
+      <!-- END OF sign up button row -->
+    </form>
 
+    <!-- horizontal separator row -->
+    <ion-row>
+      <ion-col size="12" size-lg="6" offset-lg="3">
+        <!-- <hr /> -->
+        <ion-item-divider></ion-item-divider>
+      </ion-col>
+    </ion-row>
+    <!-- END OF horizontal separator row -->
+    <!-- new user row -->
+    <ion-row>
+      <ion-col
+        size="10"
+        offset="1"
+        size-lg="4"
+        offset-lg="4"
+        style="text-align: center"
+      >
+        <h3 class="ion-margin ion-padding">Returning User?</h3>
+        <ion-button color="medium" [routerLink]="['/login']">Log In</ion-button>
+      </ion-col>
+    </ion-row>
+    <!-- END OF new user row -->
+  </ion-grid>
 </ion-content>

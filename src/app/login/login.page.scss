@@ -1,0 +1,47 @@
+.logo-container {
+  //   display: flex;
+  //   justify-content: center;
+
+  text-align: center;
+
+  .center-icon {
+    font-size: 128px;
+  }
+
+  .end-icon {
+    // margin-left: auto;
+    float: right;
+  }
+}
+
+.email-input-container {
+  text-align: center;
+  display: flex;
+
+  ion-icon {
+    position: absolute;
+    left: 16px;
+    align-self: center;
+  }
+
+  ion-input {
+    border: none;
+    border-bottom: 1px solid #1890ff;
+    padding: 5px 10px;
+    outline: none;
+  }
+}
+
+.spinner-col {
+  display: flex;
+  align-items: center;
+}
+
+.login-button-col {
+  text-align: center;
+}
+
+ion-button {
+  width: 75%;
+  --border-radius: 20px;
+}

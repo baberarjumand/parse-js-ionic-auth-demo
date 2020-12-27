@@ -1,0 +1,73 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-grid class="ion-padding">
+    <!-- top logos row -->
+    <ion-row class="ion-padding">
+      <ion-col size="10" offset="1" size-lg="4" offset-lg="4">
+        <div class="logo-container">
+          <ion-icon name="logo-ionic" class="center-icon"></ion-icon>
+          <ion-icon
+            name="logo-angular"
+            class="end-icon"
+            size="large"
+          ></ion-icon>
+          <h3 class="ion-margin ion-padding">Log In</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- END OF top logos row -->
+    <!-- email field row -->
+    <ion-row class="ion-padding">
+      <ion-col size="10" offset="1" size-lg="4" offset-lg="4">
+        <div class="email-input-container">
+          <ion-icon name="person-outline" class="email-icon"></ion-icon>
+          <ion-input placeholder="Username"></ion-input>
+        </div>
+      </ion-col>
+      <ion-col size="1" class="spinner-col" *ngIf="this.showLoadingSpinner">
+        <ion-spinner name="lines"></ion-spinner>
+      </ion-col>
+    </ion-row>
+    <!-- END OF email field row -->
+    <!-- login button row -->
+    <ion-row>
+      <ion-col
+        size="10"
+        offset="1"
+        size-lg="4"
+        offset-lg="4"
+        class="login-button-col"
+      >
+        <ion-button color="primary">Log In</ion-button>
+      </ion-col>
+    </ion-row>
+    <!-- END OF login button row -->
+    <!-- horizontal separator row -->
+    <ion-row>
+      <ion-col size="12" size-lg="6" offset-lg="3">
+        <!-- <hr /> -->
+        <ion-item-divider></ion-item-divider>
+      </ion-col>
+    </ion-row>
+    <!-- END OF horizontal separator row -->
+    <!-- new user row -->
+    <ion-row>
+      <ion-col
+        size="10"
+        offset="1"
+        size-lg="4"
+        offset-lg="4"
+        style="text-align: center"
+      >
+        <h3 class="ion-margin ion-padding">New User?</h3>
+        <ion-button color="medium">Sign Up</ion-button>
+      </ion-col>
+    </ion-row>
+    <!-- END OF new user row -->
+  </ion-grid>
+</ion-content>
